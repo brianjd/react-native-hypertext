@@ -8,11 +8,12 @@ var {
 
 var styles = StyleSheet.create({
   link: {
-    color: '#0000ff',
+    color: '#fff',
     flexWrap: 'wrap',
     fontWeight: 'bold'
   },
   text: {
+    color: '#fff'
   },
   container: {
     width: 300
