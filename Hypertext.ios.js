@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#000'
-  },
-  container: {
-    width: 300
   }
 });
 
@@ -56,7 +53,7 @@ const Hypertext = React.createClass({
     });
 
     return (
-      <View style={[styles.container, containerStyle]}>{children}</View>
+      <View style={containerStyle}>{children}</View>
     )
   }
 });
