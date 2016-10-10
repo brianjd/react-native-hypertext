@@ -1,12 +1,13 @@
-var React = require('react-native');
+'use strict'
 
-var {
+import React from 'react'
+import {
   Text,
   StyleSheet,
   LinkingIOS
-} = React;
+} from 'react-native'
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   link: {
     color: '#fff',
     flexWrap: 'wrap',
@@ -20,10 +21,11 @@ var styles = StyleSheet.create({
   }
 });
 
-var splitHypertext = require('./splitHypertext');
-var randomKeyGen = function() { return Math.random().toString(36).substring(7); };
+const splitHypertext = require('./splitHypertext');
 
-var Hypertext = React.createClass({
+let randomKeyGen = function() { return Math.random().toString(36).substring(7); };
+
+const Hypertext = React.createClass({
   onPress: function(href) {
     if (typeof this.props.onLinkClick === 'function') {
       this.props.onLinkClick.apply(this, arguments);
