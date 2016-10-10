@@ -53,7 +53,7 @@ const Hypertext = React.createClass({
     });
 
     return (
-      <View style={containerStyle}>{children}</View>
+      <Text style={containerStyle}>{children}</Text>
     )
   }
 });
