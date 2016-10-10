@@ -4,17 +4,18 @@ import React from 'react'
 import {
   Text,
   StyleSheet,
-  LinkingIOS
+  LinkingIOS,
+  View
 } from 'react-native'
 
 const styles = StyleSheet.create({
   link: {
-    color: '#fff',
+    color: '#000',
     flexWrap: 'wrap',
     fontWeight: 'bold'
   },
   text: {
-    color: '#fff'
+    color: '#000'
   },
   container: {
     width: 300
@@ -37,22 +38,25 @@ const Hypertext = React.createClass({
   splitHypertext: splitHypertext,
 
   render: function() {
+
+    const { containerStyle, linkStyle, textStyle } = this.props
+
     var children = this.splitHypertext({
       input: this.props.children,
 
       onLink: function(text, href) {
-        return <Text style={styles.link} key={randomKeyGen()} onPress={
+        return <Text style={[styles.link, linkStyle]} key={randomKeyGen()} onPress={
           this.onPress.bind(this, href)
         }>{text}</Text>;
       },
 
       onText: function(text) {
-        return <Text style={styles.text} key={randomKeyGen()}>{text}</Text>;
+        return <Text style={[styles.text, textStyle]} key={randomKeyGen()}>{text}</Text>;
       }
     });
 
     return (
-      <Text>{children}</Text>
+      <View style={[styles.container, containerStyle]}>{children}</View>
     )
   }
 });
